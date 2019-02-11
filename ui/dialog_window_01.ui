@@ -4,7 +4,9 @@
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkDialog" id="dialog_window_01">
     <property name="can_focus">False</property>
-    <property name="icon_name">mymmld_dialog_01</property>
+    <property name="default_width">800</property>
+    <property name="default_height">650</property>
+    <property name="icon_name">input-gaming</property>
     <property name="type_hint">dialog</property>
     <child type="titlebar">
       <placeholder/>
@@ -13,6 +15,7 @@
       <object class="GtkBox" id="dialog_box_01">
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="dialog_bottoms_01">
             <property name="can_focus">False</property>
@@ -51,14 +54,10 @@
           </packing>
         </child>
         <child>
-          <object class="GtkTextView" id="dialog_query_01">
+          <object class="GtkTextView" id="dialog_querytext_01">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_bottom">200</property>
-            <property name="wrap_mode">char</property>
-            <property name="overwrite">True</property>
-            <property name="input_hints">GTK_INPUT_HINT_SPELLCHECK | GTK_INPUT_HINT_WORD_COMPLETION | GTK_INPUT_HINT_NONE</property>
-            <property name="monospace">True</property>
+            <property name="bottom_margin">300</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -67,13 +66,12 @@
           </packing>
         </child>
         <child>
-          <object class="GtkTextView" id="dialog_result_01">
+          <object class="GtkTextView" id="dialog_querytext_02">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_bottom">200</property>
             <property name="editable">False</property>
+            <property name="bottom_margin">300</property>
             <property name="accepts_tab">False</property>
-            <property name="monospace">True</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -84,3 +82,4 @@
       </object>
     </child>
   </object>
+</interface>

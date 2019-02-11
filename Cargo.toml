@@ -2,7 +2,7 @@
 name = "mymmld"
 version = "0.1.0"
 authors = ["nnao45 <n4sekai5y@gmail.com>"]
-edition = "2019"
+edition = "2018"
 
 [dependencies.gtk]
 version = "0.5.0"
