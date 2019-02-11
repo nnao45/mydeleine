@@ -2,29 +2,19 @@ extern crate gtk;
 
 use gtk::prelude::*;
 
-use gtk::{Button, Window, WindowType};
-
 fn main() {
-    if gtk::init().is_err() {
-        println!("Failed to initialize GTK.");
-        return;
-    }
+    gtk::init().expect("Failed to initialize GTK.");
 
-    let window = Window::new(WindowType::Toplevel);
-    window.set_title("First GTK+ Program");
-    window.set_default_size(350, 200);
-    let button = Button::new_with_label("Click me!");
-    window.add(&button);
-    window.show_all();
-
-    window.connect_delete_event(|_, _| {
+    let ui = include_str!("../ui/glade_window_1.ui");
+    let builder = gtk::Builder::new_from_string(ui);
+    
+    let window1 : gtk::Window = builder.get_object("window_1").unwrap();
+    window1.connect_delete_event(move |_, _| {
         gtk::main_quit();
         Inhibit(false)
     });
 
-    button.connect_clicked(|_| {
-        println!("Clicked!");
-    });
-
+    window1.show_all();
+    
     gtk::main();
 }
